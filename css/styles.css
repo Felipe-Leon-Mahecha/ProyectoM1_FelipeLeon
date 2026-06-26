@@ -33,39 +33,41 @@
    ================================================ */
 :root {
   /* Color principal del juego: cyan eléctrico */
-  --gem-cyan:         hsl(185, 100%, 50%);
-  --gem-cyan-dark:    hsl(185, 100%, 30%);
-  --gem-cyan-deeper:  hsl(185, 100%, 8%);
+  --gem-cyan: hsl(185, 100%, 50%);
+  --gem-cyan-dark: hsl(185, 100%, 30%);
+  --gem-cyan-deeper: hsl(185, 100%, 8%);
 
   /* Color secundario: magenta/púrpura */
-  --gem-purple:       hsl(270, 80%, 60%);
-  --gem-purple-dark:  hsl(270, 80%, 30%);
+  --gem-purple: hsl(270, 80%, 60%);
+  --gem-purple-dark: hsl(270, 80%, 30%);
 
   /* Color de acento: dorado para badges */
-  --gem-gold:         hsl(45, 100%, 55%);
+  --gem-gold: hsl(45, 100%, 55%);
 
   /* Fondos oscuros */
-  --bg-dark:          hsl(220, 20%, 6%);
-  --bg-card:          hsl(220, 20%, 10%);
-  --bg-card-hover:    hsl(220, 20%, 14%);
+  --bg-dark: hsl(220, 20%, 6%);
+  --bg-card: hsl(220, 20%, 10%);
+  --bg-card-hover: hsl(220, 20%, 14%);
 
   /* Texto */
-  --text-primary:     hsl(0, 0%, 95%);
-  --text-secondary:   hsl(0, 0%, 65%);
-  --text-muted:       hsl(0, 0%, 45%);
+  --text-primary: hsl(0, 0%, 95%);
+  --text-secondary: hsl(0, 0%, 65%);
+  --text-muted: hsl(0, 0%, 45%);
 
   /* Espaciado */
-  --space-xs:   0.5rem;
-  --space-sm:   1rem;
-  --space-md:   1.5rem;
-  --space-lg:   2.5rem;
-  --space-xl:   4rem;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
 }
 
 /* ================================================
    RESET Y BASE
    ================================================ */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -161,12 +163,16 @@ ul {
   filter: drop-shadow(0 0 16px hsl(185, 100%, 55%));
   animation: pulse-gem 2.5s ease-in-out infinite;
 }
+
 @keyframes pulse-gem {
-  0%, 100% { 
+
+  0%,
+  100% {
     filter: drop-shadow(0 0 10px hsl(185, 100%, 50%));
     transform: scale(1);
   }
-  50% { 
+
+  50% {
     filter: drop-shadow(0 0 25px hsl(185, 100%, 60%));
     transform: scale(1.06);
   }
@@ -659,7 +665,225 @@ ul {
     animation: none;
   }
 
-  .feature-card, .btn-jugar, .btn-demo {
+  .feature-card,
+  .btn-jugar,
+  .btn-demo {
     transition: none;
+  }
+}
+
+/* ================================================
+   GEM COLOR STUDIO — Generador de Paletas
+   Agregar al final de styles.css
+   ================================================ */
+
+.palette-section {
+  padding: var(--space-xl) var(--space-sm);
+  max-width: 1100px;
+  margin: 0 auto;
+  border-top: 1px solid hsl(220, 20%, 12%);
+}
+
+.palette-desc {
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  line-height: 1.8;
+}
+
+/* Controles: selector + botón */
+.palette-controls {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-lg);
+}
+
+.palette-control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.palette-control-group label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gem-cyan);
+}
+
+.palette-select {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--gem-cyan-dark);
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.palette-select:focus {
+  border-color: var(--gem-cyan);
+  box-shadow: 0 0 0 2px hsl(185, 100%, 50%, 0.2);
+}
+
+.btn-generar {
+  padding: 0.75rem 2rem;
+  background: var(--gem-cyan);
+  color: hsl(220, 20%, 6%);
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+  box-shadow: 0 0 20px hsl(185, 100%, 50%, 0.3);
+}
+
+.btn-generar:hover {
+  background: var(--gem-cyan-dark);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px hsl(185, 100%, 50%, 0.5);
+}
+
+.btn-generar:active {
+  transform: scale(0.97);
+}
+
+.btn-generar:focus-visible {
+  outline: 2px solid var(--gem-cyan);
+  outline-offset: 3px;
+}
+
+/* Grid de colores */
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: var(--space-sm);
+}
+
+/* Cada tarjeta de color */
+.palette-card {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid hsl(220, 20%, 16%);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: var(--bg-card);
+  role: listitem;
+}
+
+.palette-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px hsl(220, 20%, 4%, 0.6);
+}
+
+.palette-card:focus-visible {
+  outline: 2px solid var(--gem-cyan);
+  outline-offset: 2px;
+}
+
+/* Bloque de color (la parte de arriba con el color real) */
+.palette-color-block {
+  width: 100%;
+  height: 90px;
+  transition: filter 0.2s ease;
+}
+
+.palette-card:hover .palette-color-block {
+  filter: brightness(1.1);
+}
+
+/* Info del color (hex + formato) */
+.palette-color-info {
+  padding: 0.5rem 0.6rem;
+  background: var(--bg-card);
+}
+
+.palette-color-hex {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.05em;
+  font-family: 'Courier New', monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.palette-color-hsl {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+  font-family: 'Courier New', monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.palette-copy-hint {
+  font-size: 0.65rem;
+  color: var(--gem-cyan);
+  margin-top: 0.2rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.palette-card:hover .palette-copy-hint {
+  opacity: 1;
+}
+
+/* Toast de microfeedback */
+.palette-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--gem-cyan);
+  color: hsl(220, 20%, 6%);
+  padding: 0.6rem 1.5rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 999;
+  white-space: nowrap;
+}
+
+.palette-toast.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .palette-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-generar {
+    width: 100%;
+  }
+
+  .palette-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .palette-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
