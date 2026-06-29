@@ -5,8 +5,6 @@
 
   > Landing page del proyecto integrador del módulo 1 — Soy Henry Full Stack 3.0
 
-  🔗 **[Ver sitio en vivo](https://thegembyfelixcompany.netlify.app/)**
-
 </div>
 
 ---
