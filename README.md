@@ -1,7 +1,7 @@
 # ◆ THE GEM — Landing Page + GEM Color Studio
 
 > Proyecto Integrador Módulo 1 — Soy Henry Full Stack 3.0  
-> Desarrollado por **Juan Felipe León Mahecha**
+> Desarrollado por **Felipe Matheus León Mahecha**
 
 ---
 
