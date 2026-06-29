@@ -1,173 +1,137 @@
-# ◆ THE GEM — Landing Page + GEM Color Studio
+<div align="center">
+  <img src="./img/Logo_THE_GEM.png" alt="Logo THE GEM" width="140px"/>
 
-> Proyecto Integrador Módulo 1 — Soy Henry Full Stack 3.0  
-> Desarrollado por **Felipe Matheus León Mahecha**
+  # 💎 THE GEM — Landing Page
 
----
+  > Landing page del proyecto integrador del módulo 1 — Soy Henry Full Stack 3.0
 
-## 📌 Descripción
+  🔗 **[Ver sitio en vivo](https://thegembyfelixcompany.netlify.app/)**
 
-Landing page oficial de **THE GEM**, un juego arcade 2D de supervivencia hecho en JavaScript puro + HTML5 Canvas. La página presenta el juego, sus características, información del creador, un minijuego jugable en el navegador y el **GEM Color Studio**: una herramienta interactiva para generar paletas de colores aleatorias en formato HSL y HEX.
-
-El GEM Color Studio nació de la identidad visual del juego — toda la paleta de THE GEM fue diseñada con colores HSL, y esta herramienta permite explorar combinaciones similares para fanart, assets o diseño.
+</div>
 
 ---
 
-## 🚀 Demo en vivo
+## 📄 ¿Qué es este proyecto?
 
-🌐 [Ver en GitHub Pages](https://felipe-leon-mahecha.github.io/the-gem-landing/)  
-🎮 [Jugar THE GEM completo](https://thegembyfelixcompany.netlify.app)
+Landing page presentación del videojuego **THE GEM**, desarrollada como proyecto integrador del Módulo 1 del bootcamp Full Stack de Soy Henry.
 
----
-
-## 🛠️ Tech Stack
-
-- **HTML5** — Semántico: `header`, `nav`, `main`, `article`, `aside`, `footer`
-- **CSS3** — Variables HSL, CSS Grid, Flexbox, Media Queries, animaciones
-- **JavaScript vanilla** — DOM, eventos, `Math.random()`, Canvas API, Clipboard API
-- **Git / GitHub** — Control de versiones y portafolio
-- **GitHub Pages** — Deploy de producción
+Construida con **HTML5, CSS3 y JavaScript vanilla** — sin frameworks, sin librerías externas. Toda la interactividad fue implementada a mano.
 
 ---
 
-## ✨ Funcionalidades
+## 🗂️ Secciones de la página
 
-### Landing Page
-- Header con logo animado y tagline
-- Navegación sticky con scroll suave
-- Sección hero con descripción del juego y stack tecnológico
-- Grid de características (CSS Grid responsive)
-- Sección "Sobre el creador"
-- Footer con año automático via JavaScript
+| Sección | Descripción |
+|---|---|
+| **Hero** | Presentación del juego con imagen del personaje y stack tecnológico |
+| **Características** | Cards con las funcionalidades principales del juego |
+| **Sobre mí** | Perfil del creador y links del proyecto |
+| **Demo jugable** | Mini juego interactivo embebido directamente en la página |
+| **GEM Color Studio** | Herramienta generadora de paletas de colores al estilo THE GEM |
+| **Contacto / Footer** | Links de redes y datos de contacto |
 
-### 🎮 Minijuego demo
-- Canvas 500×320 jugable en el navegador
-- Control con mouse (desktop) y touch (móvil)
-- Obstáculos con velocidad progresiva
-- Sistema de puntaje en tiempo real
-- Pantalla de Game Over
+---
 
-### 🎨 GEM Color Studio
-- Selector de tamaño de paleta: 6, 8 o 9 colores
-- Generación aleatoria en formato **HSL** y **HEX**
-- Visualización de cada color con su código
-- **Clic para copiar HEX** al portapapeles
-- Microfeedback tipo **toast** al generar y copiar
+## 🎮 Demo jugable
+
+La página incluye un mini juego jugable embebido, construido con **HTML5 Canvas y JavaScript puro**.
+
+- Controlás una bolita cyan esquivando círculos rojos
+- Compatible con **mouse** (escritorio) y **touch** (móvil)
+- Dificultad progresiva: los obstáculos aumentan de velocidad con el puntaje
+- Sistema de Game Over con puntaje final
+
+<div align="center">
+  <img src="./img/Cap_1.png" alt="Demo jugable embebida" width="80%"/>
+</div>
+
+---
+
+## 🎨 GEM Color Studio
+
+Herramienta interactiva que genera paletas de colores al estilo visual de THE GEM.
+
+- Paletas de **6, 8 o 9 colores** generados aleatoriamente en rangos HSL
+- Visualización en formato **HSL o HEX**
+- **Clic en cualquier color** para copiar su HEX al portapapeles
+- Toast de microfeedback al generar o copiar
 - Animación de entrada en las tarjetas
-- Accesibilidad: labels, foco visible, contraste, `aria-label`
+- Regeneración automática al cambiar tamaño o formato
+
+<div align="center">
+  <img src="./img/Cap_2.png" alt="GEM Color Studio" width="80%"/>
+</div>
 
 ---
 
-## 📁 Estructura del proyecto
+## 🛠️ Tecnologías utilizadas
+
+- **HTML5** — estructura semántica con `<article>`, `<section>`, `<aside>`, `<nav>`
+- **CSS3** — diseño responsive con variables CSS, grid y flexbox
+- **JavaScript ES6** — lógica del mini juego, generador de paletas y dinámica del DOM
+- **HTML5 Canvas** — renderizado del mini juego
+- **Netlify** — deploy del sitio
+
+---
+
+## 🗂️ Estructura del proyecto
 
 ```
 the-gem-landing/
-├── index.html
+├── index.html          # Estructura principal de la página
 ├── css/
-│   └── styles.css
+│   └── styles.css      # Estilos y variables CSS
 ├── js/
-│   ├── app.js          ← año automático en footer
-│   ├── minijuego.js    ← demo jugable en Canvas
-│   └── paleta.js       ← GEM Color Studio
-├── img/
-│   ├── Logo_THE_GEM.png
-│   ├── pelota.png
-│   └── felix.png
-├── docs/
-│   └── capturas/       ← capturas de la app y uso de IA
-└── README.md
+│   ├── app.js          # Inicialización y año del footer
+│   ├── minijuego.js    # Lógica del mini juego (Canvas)
+│   └── paleta.js       # Generador de paletas (GEM Color Studio)
+└── img/
+    ├── Logo_THE_GEM.png
+    ├── pelota.png
+    ├── Cap_1.png
+    └── Cap_2.png
 ```
 
 ---
 
-## ⚙️ Cómo ejecutar localmente
+## 🚀 Cómo ejecutarlo localmente
 
-1. Clonar el repositorio:
 ```bash
-git clone https://github.com/Felipe-Leon-Mahecha/the-gem-landing.git
+# 1. Clona el repositorio
+git clone https://github.com/tu-usuario/the-gem-landing.git
+
+# 2. Entra a la carpeta
+cd the-gem-landing
+
+# 3. Abre index.html en tu navegador
+#    (o usá Live Server en VS Code)
 ```
 
-2. Abrir la carpeta del proyecto y ejecutar con Live Server (VS Code) o simplemente abrir `index.html` en el navegador.
-
-> No requiere instalación de dependencias ni servidor especial.
+> No requiere instalación de dependencias. Es HTML/CSS/JS puro.
 
 ---
 
-## 🌐 Cómo desplegar en GitHub Pages
+## 🤖 Proceso de desarrollo con IA
 
-1. Ir al repositorio en GitHub
-2. Settings → Pages
-3. Source: **Deploy from a branch**
-4. Branch: **main** → / (root)
-5. Guardar — en unos minutos el sitio queda publicado
+Durante el desarrollo usé IA (Claude) como herramienta de aprendizaje y apoyo técnico, no como reemplazo del proceso:
 
----
+- **Generación de funciones:** Le mostraba capturas de la interfaz o describía el comportamiento esperado, y la IA me ayudaba a implementar la función (por ejemplo, la lógica del generador de paletas HSL y la conversión a HEX).
+- **Explicación línea por línea:** Cuando no entendía una parte del código, pegaba la línea o el bloque y pedía que me lo explicara en detalle antes de seguir.
+- **Revisión y corrección:** Usé capturas del comportamiento visual para detectar bugs y discutir soluciones.
+- **Todo el código fue revisado y comprendido** antes de integrarlo al proyecto.
 
-## 🎨 Decisiones técnicas
-
-### ¿Por qué HSL en vez de HEX para generar colores?
-HSL (Hue, Saturation, Lightness) permite controlar el rango de colores de forma legible y predecible. Al generar aleatoriamente:
-- `H` entre 0-360 garantiza variedad de tonos
-- `S` entre 40-100% garantiza colores vivos, no apagados
-- `L` entre 30-70% garantiza contraste suficiente contra fondos claros y oscuros
-
-Con HEX tendríamos que generar 3 valores RGB completamente aleatorios, lo que produce muchos grises y colores sin contraste.
-
-### ¿Por qué separar en 3 archivos JS?
-- `app.js` — lógica general de la página (footer, inicialización)
-- `minijuego.js` — todo lo relacionado al Canvas y el juego
-- `paleta.js` — lógica del generador de colores
-
-Separar por responsabilidad hace el código más legible y fácil de mantener.
-
-### CSS con variables HSL
-Todo el sistema de colores usa variables CSS con HSL documentadas, lo que permite crear variaciones de un mismo tono solo cambiando la luminosidad. Ejemplo:
-```css
---gem-cyan:        hsl(185, 100%, 50%);  /* color principal */
---gem-cyan-dark:   hsl(185, 100%, 30%);  /* versión oscura */
---gem-cyan-deeper: hsl(185, 100%, 8%);   /* para fondos */
-```
-
----
-
-## 🤖 Uso de IA en el desarrollo
-
-Se utilizó **Claude (Anthropic)** como herramienta de apoyo durante el desarrollo. Las capturas de las conversaciones están en `docs/capturas/`.
-
-### Prompts utilizados (ejemplos):
-- *"Crea una función en JavaScript que convierta colores HSL a HEX"* → generó la función base de conversión
-- *"Explícame línea por línea qué hace esta función de conversión"* → permitió entender el algoritmo
-- *"¿Por qué usar HSL en vez de HEX para generar colores aleatorios?"* → ayudó a entender y documentar la decisión técnica
-- *"¿Cómo funciona requestAnimationFrame en el loop del juego?"* → explicó el ciclo de animación del Canvas
-
-La IA se usó como colaboradora técnica y herramienta de aprendizaje, no como reemplazo del proceso de desarrollo.
-
----
-
-## 📋 Checklist de entrega
-
-- [x] HTML semántico completo
-- [x] CSS externo con variables HSL documentadas
-- [x] CSS Grid + Flexbox + Responsive (3→2→1 columnas)
-- [x] JavaScript: DOM, eventos, Math.random(), Canvas, Clipboard API
-- [x] Botón "Generar paleta" operativo
-- [x] Generación correcta HSL y HEX
-- [x] Render dinámico según tamaño seleccionado (6/8/9)
-- [x] Microfeedback visible (toast)
-- [x] Accesibilidad básica (labels, contraste, foco visible)
-- [x] Repositorio GitHub público con commits claros
-- [x] Deploy en GitHub Pages
-- [x] README con instrucciones y decisiones técnicas
-- [x] Capturas del flujo principal y uso de IA
-- [x] Extra: copiar HEX al portapapeles
-- [x] Extra: animaciones de entrada
+> El objetivo fue usar la IA como haría con un senior developer: consultando, preguntando el porqué, y tomando las decisiones finales yo mismo.
 
 ---
 
 ## 👤 Autor
 
-**Felipe León Mahecha**  
-Estudiante Full Stack — Soy Henry 3.0  
-📧 fmleonm19@ejemplo.com  
-🔗 [LinkedIn]([https://www.linkedin.com/](https://www.linkedin.com/in/felipe-matheus-le%C3%B3n-mahecha-351482408/))  
-💻 [GitHub](https://github.com/Felipe-Leon-Mahecha)
+**Felipe León Mahecha**
+Estudiante Full Stack — Soy Henry Bootcamp 3.0
+📍 Paipa, Boyacá, Colombia
+
+---
+
+## 📄 Estado del proyecto
+
+✅ **Entregado** — Proyecto integrador Módulo 1, Soy Henry Full Stack 3.0
