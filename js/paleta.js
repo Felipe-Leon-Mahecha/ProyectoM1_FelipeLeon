@@ -74,7 +74,25 @@ function generarNuevaPaleta() {
   renderizarPaleta();
 }
 
-// Solo pinta la paleta actual en pantalla (no genera colores nuevos)
+// Ajusta la cantidad de colores de la paleta actual SIN regenerar los que ya
+// existían: si se agrandó, agrega colores nuevos al final; si se achicó,
+// simplemente corta los últimos. Los colores existentes (bloqueados o no) se
+// mantienen intactos. Se usa cuando cambia el <select> de tamaño.
+function ajustarTamanoPaleta() {
+  const cantidad = parseInt(selectTamano.value);
+
+  if (paletaActual.length < cantidad) {
+    // Agrandó la paleta: agregar colores nuevos al final
+    while (paletaActual.length < cantidad) {
+      paletaActual.push(generarColorHSL());
+    }
+  } else if (paletaActual.length > cantidad) {
+    // Achicó la paleta: recortar los últimos, sin tocar los que quedan
+    paletaActual = paletaActual.slice(0, cantidad);
+  }
+
+  renderizarPaleta();
+}
 function renderizarPaleta() {
   const formato = selectFormato.value;
 
@@ -192,9 +210,12 @@ btnGenerar.addEventListener('click', function() {
   mostrarToast('✅ Paleta generada — clic en un color para copiar su HEX');
 });
 
-// Cambiar el tamaño sí regenera (agrega/quita colores, mantiene bloqueados)
+// Cambiar el tamaño NO regenera los colores existentes — solo agrega o
+// quita colores al final para llegar a la nueva cantidad (pedido del profe)
 selectTamano.addEventListener('change', function() {
   if (paletaActual.length > 0) {
+    ajustarTamanoPaleta();
+  } else {
     generarNuevaPaleta();
   }
 });
