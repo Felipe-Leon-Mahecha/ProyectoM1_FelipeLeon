@@ -4,202 +4,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>THE GEM — by Felix</title>
+  <title>Color Fly Studio — Generador de paletas</title>
   <link rel="stylesheet" href="./css/styles.css" />
 </head>
 
 <body>
 
-  <!-- HEADER: Título principal del juego -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="header-inner">
-      <div class="gem-logo">
-        <img src="./img/Logo_THE_GEM.png" alt="Logo de THE GEM" class="gem-logo-img" />
-      </div>
-      <p class="site-tagline">Sobrevive. Gira. Domina.</p>
+      <p class="site-tagline">🎨 Color Fly Studio — Generador de paletas de colores</p>
     </div>
   </header>
 
-  <!-- NAV: Navegación interna -->
+  <!-- NAV -->
   <nav class="site-nav">
     <ul>
-      <li><a href="#sobre-el-juego">El Juego</a></li>
+      <li><a href="#color-studio">Herramienta</a></li>
       <li><a href="#caracteristicas">Características</a></li>
-      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#sobre-mi">Desarrollador</a></li>
       <li><a href="#contacto">Contacto</a></li>
-      <li><a href="#color-studio">Color Studio</a></li>
     </ul>
   </nav>
 
   <main>
 
-    <!-- SECCIÓN HERO -->
-    <section class="hero" id="sobre-el-juego">
-      <div class="hero-content">
-        <article class="hero-article">
-          <div class="hero-player">
-            <img src="./img/pelota.png" alt="Personaje principal de THE GEM" class="hero-pelota" />
-          </div>
-          <h2>Un arcade de supervivencia version DEMO</h2>
-          <p>
-            THE GEM originalmente es un juego 2D donde controlas una esfera que orbita dentro
-            de un anillo giratorio, en este version se entrenara tu agilidad y estrategia en un plano 2D.
-          </p>
-          <p>Tu misión: esquivar obstáculos, sobrevivir
-            el mayor tiempo posible y desbloquear todo lo que el juego tiene para ofrecer.
-          </p>
-          <p>
-            Construido completamente en JavaScript puro + HTML5 Canvas, sin frameworks,
-            sin motores externos. Solo código, creatividad y muchas horas de trabajo.
-          </p>
-        </article>
-
-        <aside class="hero-aside">
-          <h3>Stack tecnológico</h3>
-          <ul>
-            <li>🎮 JavaScript vanilla</li>
-            <li>🎨 HTML5 Canvas</li>
-            <li>⚡ Vite (bundler)</li>
-            <li>🌐 Netlify (deploy)</li>
-            <li>📱 Capacitor (Android APK)</li>
-          </ul>
-          <div class="badge-container">
-            <span class="badge">Web</span>
-            <span class="badge">Android</span>
-            <span class="badge">Beta Abierta</span>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- SECCIÓN CARACTERÍSTICAS -->
-    <section class="features-section" id="caracteristicas">
-      <h2 class="section-title">¿Qué tiene THE GEM?</h2>
-      <div class="features-grid">
-
-        <article class="feature-card">
-          <span class="feature-icon">⚔️</span>
-          <h3>Niveles y Supervivencia</h3>
-          <p>Modo historia con niveles progresivos y un modo Survival sin fin para los más valientes.</p>
-        </article>
-
-        <article class="feature-card">
-          <span class="feature-icon">🛒</span>
-          <h3>Tienda completa</h3>
-          <p>Skins, trails, banners, emotes y cofres. Sistema de monedas y Ruby Pass estilo battle pass.</p>
-        </article>
-
-        <article class="feature-card">
-          <span class="feature-icon">🏆</span>
-          <h3>Sistema de Rangos</h3>
-          <p>17 rangos únicos desde Hierro hasta el mítico rango cósmico. ¿Puedes llegar al tope?</p>
-        </article>
-
-        <article class="feature-card">
-          <span class="feature-icon">📱</span>
-          <h3>Disponible en Android</h3>
-          <p>Exportado como APK nativo con Capacitor. Diseñado para móviles desde el principio.</p>
-        </article>
-
-        <article class="feature-card">
-          <span class="feature-icon">🎨</span>
-          <h3>Personalización total</h3>
-          <p>Skins con animaciones (rolling, simétrico, asimétrico), trails de partículas y más.</p>
-        </article>
-
-        <article class="feature-card">
-          <span class="feature-icon">🌐</span>
-          <h3>Jugable en el navegador</h3>
-          <p>Sin descargas, sin instalación. Abre el link y ya estás jugando desde cualquier dispositivo.</p>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- SECCIÓN SOBRE MÍ -->
-    <section class="about-section" id="sobre-mi">
-      <article class="about-article">
-        <h2>Sobre el creador</h2>
-        <img src="./img/felix.png" alt="Felix, creador de THE GEM" class="profile-img"
-          onerror="this.style.display='none'" />
-        <p>
-          Soy <strong>LEX</strong> (Felipe Leon), desarrollador independiente y creador de THE GEM.
-          Empecé este proyecto para aprender desarrollo web real haciendo algo que me apasiona:
-          los videojuegos.
-        </p>
-        <p>
-          Actualmente curso el bootcamp Full Stack de Soy Henry mientras construyo
-          THE GEM de manera paralela, usando IA como colaboradora técnica y poniendo en práctica
-          todo lo que aprendo.
-        </p>
-        <ul class="interests-list">
-          <li>🎮 Diseño y desarrollo de videojuegos</li>
-          <li>📱 Desarrollo móvil con Android</li>
-          <li>🤖 IA aplicada al desarrollo</li>
-          <li>🎨 Diseño de personajes y skins</li>
-          <li>⚡ Optimización de rendimiento en Canvas</li>
-        </ul>
-      </article>
-
-      <aside class="links-aside">
-        <h3>Links del proyecto</h3>
-        <ul>
-          <li>
-            <a href="https://thegembyfelixcompany.netlify.app" target="_blank" rel="noopener">
-              🌐 Jugar version completa
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/" target="_blank" rel="noopener">
-              💻 Mi GitHub
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/" target="_blank" rel="noopener">
-              🔗 Mi LinkedIn
-            </a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener">
-              📸 Mi Instagram
-            </a>
-          </li>
-        </ul>
-      </aside>
-    </section>
-
-    <!-- SECCIÓN MINI JUEGO JUGABLE -->
-    <section class="demo-section" id="demo">
-      <h2 class="section-title">¡Juega la demo!</h2>
-      <p class="demo-desc">
-        Una versión simplificada hecha con HTML5 Canvas y JavaScript puro.<br>
-        <strong>Mueve el mouse</strong> (o el dedo en móvil) para esquivar los círculos rojos.
-      </p>
-
-      <div class="game-wrapper">
-        <!-- El canvas donde se dibuja el juego -->
-        <canvas id="gem-canvas" width="500" height="320"></canvas>
-
-        <!-- Controles debajo del canvas -->
-        <div class="game-controls">
-          <button id="btn-iniciar" class="btn-jugar-demo">▶ Jugar</button>
-          <p id="estado-juego" class="game-estado">Presiona Jugar para empezar</p>
-          <p id="puntaje-juego" class="game-puntaje">Puntaje: 0</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 
-  AGREGAR ESTA SECCIÓN EN index.html
-  Justo ANTES del cierre de </main>, después de la sección #demo
--->
-
-    <!-- SECCIÓN GEM COLOR STUDIO -->
+    <!-- SECCIÓN COLOR FLY STUDIO (la app) -->
     <section class="palette-section" id="color-studio">
-      <h2 class="section-title">GEM Color Studio</h2>
+      <h2 class="section-title">Color Fly Studio</h2>
       <p class="palette-desc">
-        La identidad visual de THE GEM nació de explorar combinaciones de colores HSL.<br>
-        Generá tu propia paleta al estilo del juego — útil para fanart, assets o diseño.
+        Generador de paletas de colores en HSL y HEX.<br>
+        Elegí cuántos colores querés, bloqueá los que te gusten y copiá el código con un clic.
       </p>
 
       <div class="palette-controls">
@@ -234,19 +69,91 @@
       <div id="palette-toast" class="palette-toast" role="alert" aria-live="polite"></div>
     </section>
 
+    <!-- SECCIÓN CARACTERÍSTICAS DE LA HERRAMIENTA -->
+    <section class="features-section" id="caracteristicas">
+      <h2 class="section-title">¿Qué puede hacer Color Fly Studio?</h2>
+      <div class="features-grid">
+
+        <article class="feature-card">
+          <span class="feature-icon">🎨</span>
+          <h3>Dos formatos</h3>
+          <p>Visualizá cada color en HSL o en HEX, y cambiá entre uno y otro sin perder la paleta.</p>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-icon">🔒</span>
+          <h3>Bloqueo de colores</h3>
+          <p>¿Te gustó un color? Bloquealo para que se mantenga fijo mientras generás el resto de la paleta.</p>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-icon">📋</span>
+          <h3>Copiado con un clic</h3>
+          <p>Hacé clic en cualquier color (o Enter/Espacio con el teclado) para copiar su código HEX al instante.</p>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-icon">⚙️</span>
+          <h3>Tamaño ajustable</h3>
+          <p>Elegí paletas de 6, 8 o 9 colores según lo que necesite tu proyecto.</p>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-icon">📱</span>
+          <h3>Funciona en cualquier pantalla</h3>
+          <p>Diseño responsive, pensado para verse bien tanto en escritorio como en móvil.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SECCIÓN SOBRE EL DESARROLLADOR -->
+    <section class="about-section" id="sobre-mi">
+      <article class="about-article">
+        <h2>Sobre el desarrollador</h2>
+        <p>
+          Soy <strong>Felipe León</strong>, desarrollador. Construí Color Fly Studio como
+          ejercicio práctico dentro del bootcamp Full Stack de Soy Henry.
+        </p>
+        <p>
+          Uso IA como colaboradora técnica durante el desarrollo, poniendo en práctica
+          todo lo que voy aprendiendo.
+        </p>
+      </article>
+
+      <aside class="links-aside">
+        <h3>Links</h3>
+        <ul>
+          <li>
+            <a href="https://github.com/Felipe-Leon-Mahecha" target="_blank" rel="noopener">
+              💻 Mi GitHub
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener">
+              🔗 Mi LinkedIn
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+              📸 Mi Instagram
+            </a>
+          </li>
+        </ul>
+      </aside>
+    </section>
+
   </main>
 
   <!-- FOOTER -->
   <footer class="site-footer" id="contacto">
     <div class="footer-inner">
-      <p class="footer-title">◆ THE GEM</p>
-      <p>Hecho con ❤️ y mucho JavaScript por <strong>Felix</strong></p>
-      <small>felixcompany@ejemplo.com | &copy; 2026 — Proyecto personal, todos los derechos reservados</small>
+      <p class="footer-title">◆ Color Fly Studio</p>
+      <small>&copy; 2026 — Proyecto académico, Soy Henry Bootcamp</small>
     </div>
   </footer>
 
   <script src="./js/app.js"></script>
-  <script src="./js/minijuego.js"></script>
   <script src="./js/paleta.js"></script>
 </body>
 

@@ -204,6 +204,8 @@ selectTamano.addEventListener('change', function() {
 selectFormato.addEventListener('change', function() {
   if (paletaActual.length > 0) {
     renderizarPaleta();
+    const nombreFormato = selectFormato.value === 'hsl' ? 'HSL' : 'HEX';
+    mostrarToast('🔄 Cambiaste a código ' + nombreFormato);
   }
 });
 
