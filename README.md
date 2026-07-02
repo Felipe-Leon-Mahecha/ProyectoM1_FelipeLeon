@@ -1,7 +1,6 @@
 <div align="center">
-  <img src="./img/Logo_THE_GEM.png" alt="Logo THE GEM" width="140px"/>
 
-  # THE GEM — Landing Page
+  # Color Fly Studio — Landing Page
 
   > Landing page del proyecto integrador del módulo 1 — Soy Henry Full Stack 3.0
 > 
@@ -13,7 +12,7 @@
 
 ## 📄 ¿Qué es este proyecto?
 
-Landing page presentación del videojuego **THE GEM**, desarrollada como proyecto integrador del Módulo 1 del bootcamp Full Stack de Soy Henry.
+Landing page de **Color Fly Studio**, un generador de paletas de colores en HSL y HEX, desarrollado como proyecto integrador del Módulo 1 del bootcamp Full Stack de Soy Henry.
 
 Construida con **HTML5, CSS3 y JavaScript vanilla** — sin frameworks, sin librerías externas. Toda la interactividad fue implementada a mano.
 
@@ -23,33 +22,16 @@ Construida con **HTML5, CSS3 y JavaScript vanilla** — sin frameworks, sin libr
 
 | Sección | Descripción |
 |---|---|
-| **Hero** | Presentación del juego con imagen del personaje y stack tecnológico |
-| **Características** | Cards con las funcionalidades principales del juego |
+| **Herramienta** | Generador de paletas de colores (GEM Color Studio) |
+| **Características** | Cards con las funcionalidades principales de la herramienta |
 | **Sobre mí** | Perfil del creador y links del proyecto |
-| **Demo jugable** | Mini juego interactivo embebido directamente en la página |
-| **GEM Color Studio** | Herramienta generadora de paletas de colores al estilo THE GEM |
 | **Contacto / Footer** | Links de redes y datos de contacto |
-
----
-
-## 🎮 Demo jugable
-
-La página incluye un mini juego jugable embebido, construido con **HTML5 Canvas y JavaScript puro**.
-
-- Controlás una bolita cyan esquivando círculos rojos
-- Compatible con **mouse** (escritorio) y **touch** (móvil)
-- Dificultad progresiva: los obstáculos aumentan de velocidad con el puntaje
-- Sistema de Game Over con puntaje final
-
-<div align="center">
-  <img src="./img/Cap_1.png" alt="Demo jugable embebida" width="80%"/>
-</div>
 
 ---
 
 ## 🎨 GEM Color Studio
 
-Herramienta interactiva que genera paletas de colores al estilo visual de THE GEM.
+Herramienta interactiva que genera paletas de colores para proyectos de diseño.
 
 - Paletas de **6, 8 o 9 colores** generados aleatoriamente en rangos HSL
 - Visualización en formato **HSL o HEX**
@@ -68,8 +50,7 @@ Herramienta interactiva que genera paletas de colores al estilo visual de THE GE
 
 - **HTML5** — estructura semántica con `<article>`, `<section>`, `<aside>`, `<nav>`
 - **CSS3** — diseño responsive con variables CSS, grid y flexbox
-- **JavaScript ES6** — lógica del mini juego, generador de paletas y dinámica del DOM
-- **HTML5 Canvas** — renderizado del mini juego
+- **JavaScript ES6** — lógica del generador de paletas y dinámica del DOM
 - **Netlify** — deploy del sitio
 
 ---
@@ -83,12 +64,8 @@ the-gem-landing/
 │   └── styles.css      # Estilos y variables CSS
 ├── js/
 │   ├── app.js          # Inicialización y año del footer
-│   ├── minijuego.js    # Lógica del mini juego (Canvas)
 │   └── paleta.js       # Generador de paletas (GEM Color Studio)
 └── img/
-    ├── Logo_THE_GEM.png
-    ├── pelota.png
-    ├── Cap_1.png
     └── Cap_2.png
 ```
 
