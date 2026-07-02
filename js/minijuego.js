@@ -195,7 +195,7 @@ function terminarJuego() {
   ctx.fillStyle = 'hsl(0, 80%, 65%)';
   ctx.font = 'bold 28px system-ui';
   ctx.textAlign = 'center';
-  ctx.fillText('💀 GAME OVER', canvas.width / 2, canvas.height / 2 - 20);
+  ctx.fillText('💀 ¡PERDISTE!', canvas.width / 2, canvas.height / 2 - 20);
 
   ctx.fillStyle = 'hsl(185, 100%, 70%)';
   ctx.font = '18px system-ui';

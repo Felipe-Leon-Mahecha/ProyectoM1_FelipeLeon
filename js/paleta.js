@@ -13,6 +13,9 @@ const toast          = document.getElementById('palette-toast');
 // 2. Variable para el timer del toast
 let toastTimer = null;
 
+// 3. Estado actual de la paleta (permite bloquear colores individuales)
+let paletaActual = []; // array de { h, s, l, bloqueado }
+
 // ------------------------------------------------
 // UTILIDADES DE COLOR
 // ------------------------------------------------
@@ -23,7 +26,7 @@ function generarColorHSL() {
   const h = Math.floor(Math.random() * 360);       // tono: 0-360
   const s = Math.floor(Math.random() * 60) + 40;   // saturación: 40-100%
   const l = Math.floor(Math.random() * 40) + 30;   // luminosidad: 30-70%
-  return { h, s, l };
+  return { h, s, l, bloqueado: false };
 }
 
 // Convierte HSL a HEX
@@ -53,30 +56,46 @@ function textoContraste(l) {
 // RENDER DE LA PALETA
 // ------------------------------------------------
 
-function renderizarPaleta() {
+// Genera una paleta nueva, respetando los colores que estén bloqueados
+function generarNuevaPaleta() {
   const cantidad = parseInt(selectTamano.value);
-  const formato  = selectFormato.value;
+  const nuevaPaleta = [];
+
+  for (let i = 0; i < cantidad; i++) {
+    // Si en esa posición ya había un color bloqueado, se conserva tal cual
+    if (paletaActual[i] && paletaActual[i].bloqueado) {
+      nuevaPaleta.push(paletaActual[i]);
+    } else {
+      nuevaPaleta.push(generarColorHSL());
+    }
+  }
+
+  paletaActual = nuevaPaleta;
+  renderizarPaleta();
+}
+
+// Solo pinta la paleta actual en pantalla (no genera colores nuevos)
+function renderizarPaleta() {
+  const formato = selectFormato.value;
 
   // Limpiar grid anterior
   paletteGrid.innerHTML = '';
 
-  // Crear N tarjetas de color
-  for (let i = 0; i < cantidad; i++) {
-    const color = generarColorHSL();
+  paletaActual.forEach(function (color, index) {
     const hslStr = `hsl(${color.h}, ${color.s}%, ${color.l}%)`;
     const hexStr = hslAHex(color.h, color.s, color.l);
-    const codigoVisible = formato === 'hsl' ? hslStr : hexStr;
-    const textoColor = textoContraste(color.l);
 
     // Crear tarjeta
     const card = document.createElement('article');
-    card.className = 'palette-card';
+    card.className = 'palette-card' + (color.bloqueado ? ' bloqueado' : '');
     card.setAttribute('role', 'listitem');
     card.setAttribute('tabindex', '0');
     card.setAttribute('aria-label', `Color ${hexStr}. Clic para copiar.`);
 
     card.innerHTML = `
-      <div class="palette-color-block" style="background: ${hslStr};"></div>
+      <div class="palette-color-block" style="background: ${hslStr};">
+        <button type="button" class="palette-lock-btn" aria-label="${color.bloqueado ? 'Desbloquear color' : 'Bloquear color'}" title="${color.bloqueado ? 'Desbloquear' : 'Bloquear'}">${color.bloqueado ? '🔒' : '🔓'}</button>
+      </div>
       <div class="palette-color-info">
         <span class="palette-color-hex">${hexStr}</span>
         <span class="palette-color-hsl">${formato === 'hsl' ? hslStr : `h:${color.h} s:${color.s}% l:${color.l}%`}</span>
@@ -84,7 +103,7 @@ function renderizarPaleta() {
       </div>
     `;
 
-    // Clic: copiar HEX al portapapeles (Extra credit #4)
+    // Clic en la tarjeta: copiar HEX al portapapeles (Extra credit #4)
     card.addEventListener('click', function () {
       copiarAlPortapapeles(hexStr);
     });
@@ -97,11 +116,19 @@ function renderizarPaleta() {
       }
     });
 
-    paletteGrid.appendChild(card);
-  }
+    // Clic en el candado: bloquea/desbloquea el color (no dispara el copiado)
+    const btnLock = card.querySelector('.palette-lock-btn');
+    btnLock.addEventListener('click', function (e) {
+      e.stopPropagation();
+      color.bloqueado = !color.bloqueado;
+      renderizarPaleta();
+    });
 
-  // Animación sutil de entrada
-  const cards = paletteGrid.querySelectorAll('.palette-card');
+    paletteGrid.appendChild(card);
+  });
+
+  // Animación sutil de entrada solo para las tarjetas nuevas (no las bloqueadas)
+  const cards = paletteGrid.querySelectorAll('.palette-card:not(.bloqueado)');
   cards.forEach(function(card, index) {
     card.style.opacity = '0';
     card.style.transform = 'translateY(10px)';
@@ -112,8 +139,7 @@ function renderizarPaleta() {
     }, index * 40);
   });
 
-  mostrarToast('✅ Paleta generada — clic en un color para copiar su HEX');
-  console.log('[GEM Color Studio] Paleta generada: ' + cantidad + ' colores (' + formato + ')');
+  console.log('[GEM Color Studio] Paleta renderizada: ' + paletaActual.length + ' colores (' + formato + ')');
 }
 
 // ------------------------------------------------
@@ -160,20 +186,23 @@ function mostrarToast(mensaje) {
 // EVENTOS
 // ------------------------------------------------
 
-// Botón principal
+// Botón principal: genera colores nuevos (respetando los bloqueados)
 btnGenerar.addEventListener('click', function() {
-  renderizarPaleta();
+  generarNuevaPaleta();
+  mostrarToast('✅ Paleta generada — clic en un color para copiar su HEX');
 });
 
-// También regenerar si cambia el tamaño o formato (si ya hay paleta)
+// Cambiar el tamaño sí regenera (agrega/quita colores, mantiene bloqueados)
 selectTamano.addEventListener('change', function() {
-  if (paletteGrid.children.length > 0) {
-    renderizarPaleta();
+  if (paletaActual.length > 0) {
+    generarNuevaPaleta();
   }
 });
 
+// Cambiar el formato SOLO redibuja los mismos colores en otra notación
+// (antes regeneraba colores nuevos por error — ver punto 3)
 selectFormato.addEventListener('change', function() {
-  if (paletteGrid.children.length > 0) {
+  if (paletaActual.length > 0) {
     renderizarPaleta();
   }
 });
